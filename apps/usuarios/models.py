@@ -1,10 +1,11 @@
 from django.contrib.auth.models import AbstractUser
 from django.db import models
+from utils.models import BaseModel
 
 # Create your models here.
 
 
-class Usuario(AbstractUser):
+class Usuario(AbstractUser, BaseModel):
     """Modelo de usuario extendido para usuarios personalizados."""
     SEXO_CHOICES = (
         ('M', 'Masculino'),
