@@ -6,9 +6,7 @@ class Equipo(BaseModel):
     """Modelo para grupos de entrenamiento"""
     nombre = models.CharField(max_length=50)
     descripcion = models.TextField()
-    imagen = models.ImageField(upload_to='grupos')
-    created = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(auto_now=True)
+    imagen = models.ImageField(upload_to='grupos', blank=True, null=True)
 
     class Meta:
         verbose_name = 'equipo'
