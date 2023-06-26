@@ -7,7 +7,7 @@ class CatEjercicio(BaseModel):
 
     nombre = models.CharField(max_length=150)
     imagen = models.ImageField(upload_to="ejercicios", blank=True, null=True)
-    nombre = models.CharField(max_length=300, blank=True, null=True)
+    descripcion = models.CharField(max_length=300, blank=True, null=True)
 
     class Meta:
         verbose_name = "catalogo de ejercicio"
