@@ -1,9 +1,10 @@
 from django.contrib import admin
 from apps.equipos.models import Equipo, EquipoIntegrante
+from simple_history.admin import SimpleHistoryAdmin
 
 
 @admin.register(Equipo)
-class EquipoAdmin(admin.ModelAdmin):
+class EquipoAdmin(SimpleHistoryAdmin):
     search_fields = ("nombre",)
     list_filter = ("activo",)
     list_display = (
@@ -29,7 +30,7 @@ class EquipoAdmin(admin.ModelAdmin):
 
 
 @admin.register(EquipoIntegrante)
-class EquipoIntegranteAdmin(admin.ModelAdmin):
+class EquipoIntegranteAdmin(SimpleHistoryAdmin):
     search_fields = (
         "equipo__nombre",
         "integrante__name",
