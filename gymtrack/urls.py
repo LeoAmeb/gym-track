@@ -8,5 +8,6 @@ urlpatterns = [
     # API Urls
     path('api/', include([
         path('', include('apps.equipos.urls')),
+        path('usuarios/', include('apps.usuarios.urls')),
     ])),
 ]
