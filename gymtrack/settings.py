@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     # Third apps
     'rest_framework',
     'rest_framework_simplejwt',
+    'simple_history',
     # Own apps
     'apps.usuarios',
     'apps.equipos',
@@ -53,6 +54,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    # Third apps
+    'simple_history.middleware.HistoryRequestMiddleware',
 ]
 
 ROOT_URLCONF = 'gymtrack.urls'
