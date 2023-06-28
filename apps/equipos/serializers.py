@@ -1,33 +1,25 @@
-from rest_framework import serializers
+from utils.serializers import BaseModelSerializer
 from apps.equipos.models import Equipo, EquipoIntegrante
 
 
-class EquipoSerializer(serializers.ModelSerializer):
+class EquipoSerializer(BaseModelSerializer):
     """Serializer para el modelo Equipo"""
     class Meta:
         model = Equipo
-        fields = (
-            'id',
+        fields = BaseModelSerializer.Meta.fields + (
             'nombre',
             'descripcion',
             'imagen',
-            'activo',
-            'fecha_creacion',
-            'fecha_edicion',
         )
 
 
-class EquipoIntegranteSerializer(serializers.ModelSerializer):
+class EquipoIntegranteSerializer(BaseModelSerializer):
     """Serializer para el modelo EquipoIntegrante"""
     class Meta:
         model = EquipoIntegrante
-        fields = (
-            'id',
+        fields = BaseModelSerializer.Meta.fields + (
             'equipo',
             'integrante',
             'fecha_ingreso',
             'admin',
-            'activo',
-            'fecha_creacion',
-            'fecha_edicion',
         )
