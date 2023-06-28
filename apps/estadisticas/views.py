@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework import viewsets
+from apps.estadisticas.models import Estadistica
+from apps.estadisticas.serializers import EstadisticaSerializer
 
-# Create your views here.
+class EstadisticaModelViewSet(viewsets.ModelViewSet):
+    """ModelViewSet para las estadisticas"""
+    queryset = Estadistica.objects.all()
+    serializer_class = EstadisticaSerializer
